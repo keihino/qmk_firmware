@@ -232,7 +232,6 @@ void matrix_scan_user(void) {
     switch (layer) {
       // TODO: Make this relevant to the ErgoDox EZ.
         case MAIN:
-            ergodox_right_led_1_on();
             ergodox_right_led_1_off();
             break;
         case WINDOWS:
