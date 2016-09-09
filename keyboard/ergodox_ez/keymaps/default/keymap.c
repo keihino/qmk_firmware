@@ -179,7 +179,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        KC_F7,           KC_F8,   KC_F9,  KC_F10,  KC_F11,  KC_F12,  KC_TRNS,
        TO(MAIN,1),     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,  KC_TRNS, KC_TRNS,
                       KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,  KC_TRNS, KC_TRNS,
-       TO(WINDOWS,1), KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,  KC_TRNS, KC_TRNS,
+       TO(TENKEY,1), KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,  KC_TRNS, KC_TRNS,
                       KC_ACL2, KC_ACL1, KC_ACL0, KC_TRNS,  KC_TRNS,
        KC_BTN4, KC_BTN3,
        KC_PGUP,
@@ -233,7 +233,7 @@ void matrix_scan_user(void) {
         case MAIN:
             ergodox_right_led_1_off();
             break;
-        case WINDOWS:
+        case TENKEY:
             ergodox_right_led_2_on();
             break;
         case FN:
