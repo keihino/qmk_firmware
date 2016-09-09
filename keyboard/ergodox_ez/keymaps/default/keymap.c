@@ -24,7 +24,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+------+------+------+------+------| Ctl+ |           | BkSp |------+------+------+------+------+--------|
  * | LShift |   Z  |   X  |   C  |   V  |   B  |Sht+Sp|           |      |   N  |   M  |   ,  |   .  |   /  | RShift |
  * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
- *   |      |      |      | Left |  Up  |                                       | Down | Right|   [  |   ]  | LWin |
+ *   |      |      |      | Left |  Up  |                                       | Down | Right|   [  |   ]  | RTen |
  *   `----------------------------------'                                       `----------------------------------'
  *                                        ,-------------.       ,-------------.
  *                                        | LGui | LAlt |       | Alt  | Esc  |
@@ -51,54 +51,53 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         MO(FN),         KC_Y,   KC_U,   KC_I,   KC_O,   KC_P,             KC_BSLS,
                         KC_H,   KC_J,   KC_K,   KC_L,   KC_SCLN,          KC_QUOT,
              KC_BSPC,     KC_N,   KC_M,   KC_COMM,KC_DOT, KC_SLSH,          KC_RSFT,
-                                  KC_DOWN,  KC_RGHT,KC_LBRC,KC_RBRC,          TO(WINDOWS,1),
+                                  KC_DOWN,  KC_RGHT,KC_LBRC,KC_RBRC,          TO(TENKEY,1),
              KC_LALT,        KC_ESC,
              KC_PGUP,
              KC_PGDN,KC_SPC, KC_ENT
     ),
 
-/* Keymap 1: Windows layer
+/* Keymap 1: Ten-key Layer
  *
  * ,--------------------------------------------------.           ,--------------------------------------------------.
- * |   =    |   1  |   2  |   3  |   4  |   5  | `~   |           |  `~  |   6  |   7  |   8  |   9  |   0  |   -    |
+ * |        |      |      |      |      |      |      |           |   =  |  /   |   *  |   -  |  +   |   [  |   ]    |
  * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
- * | Tab    |   Q  |   W  |   E  |   R  |   T  | Tab  |           | LFn  |   Y  |   U  |   I  |   O  |   P  |   \    |
+ * |        |      |      |      |      |      |      |           |      |  7   |   8  |   9  |      |      |        |
  * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
- * | CTRL   |   A  |   S  |   D  |   F  |   G  |------|           |------|   H  |   J  |   K  |   L  |   ;  |   '"   |
- * |--------+------+------+------+------+------| LGui |           |LMouse|------+------+------+------+------+--------|
- * | LShift |   Z  |   X  |   C  |   V  |   B  |      |           |      |   N  |   M  |   ,  |   .  |   /  | RShift |
+ * |        |      |      |      |      |      |------|           |------|  4   |   5  |   6  |      |      | Enter  |
+ * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
+ * |        |      |      |      |      |      |      |           |      |  1   |   2  |   3  |      |      |        |
  * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
- *   |  cut | paste| copy | Left | Right|                                       |  Up  | Down |   [  |   ]  | LMac |
+ *   |      |      |      |      |      |                                       |      |      |      |      | RMain|
  *   `----------------------------------'                                       `----------------------------------'
  *                                        ,-------------.       ,-------------.
- *                                        | LGui | LAlt |       | Alt  | Esc  |
- *                                 ,------|------|------|       |------+--------+------.
- *                                 |      |      | Home |       | PgUp |        |      |
- *                                 |Backsp|Delete|------|       |------| Enter  |Space |
- *                                 |ace   |      | End  |       | PgDn |        |      |
- *                                 `--------------------'       `----------------------'
+ *                                        |      |      |       |      |      |
+ *                                 ,------|------|------|       |------+------+------.
+ *                                 |      |      |      |       |      |      |      |
+ *                                 |Space |Enter |------|       |------| Ent  |   0  |
+ *                                 |      |      |      |       |      |      |      |
+ *                                 `--------------------'       `--------------------'
  */
-// If it accepts an argument (i.e, is a function), it doesn't need KC_.
-// Otherwise, it needs KC_*
-[WINDOWS] = KEYMAP(  // layer 0 : default
-        // left hand
-        KC_EQL,         KC_1,         KC_2,   KC_3,   KC_4,   KC_5,   KC_GRV,
-        KC_TAB,         KC_Q,         KC_W,   KC_E,   KC_R,   KC_T,   KC_TAB,
-        KC_LCTL,        KC_A,         KC_S,   KC_D,   KC_F,   KC_G,
-        KC_LSFT,        KC_Z,         KC_X,   KC_C,   KC_V,   KC_B,   KC_LGUI,
-        LCTL(KC_X),     LCTL(KC_V),   LCTL(KC_C),   KC_LEFT,  KC_RGHT,
-                                               KC_LGUI,       KC_LALT,
-                                                              KC_HOME,
-                                               KC_BSPC,KC_DELT,KC_END,
-        // right hand
-             KC_GRV,      KC_6,   KC_7,   KC_8,   KC_9,   KC_0,             KC_MINS,
-             MO(FN),      KC_Y,   KC_U,   KC_I,   KC_O,   KC_P,             KC_BSLS,
-                          KC_H,   KC_J,   KC_K,   KC_L,   KC_SCLN,          KC_QUOT,
-             TO(MOUSE,1) ,KC_N,   KC_M,   KC_COMM,KC_DOT, KC_SLSH,          KC_RSFT,
-                                  KC_UP,  KC_DOWN,KC_LBRC,KC_RBRC,          TO(MAIN,1),
-             KC_LALT,        KC_ESC,
-             KC_PGUP,
-             KC_PGDN,KC_ENT, KC_SPC
+// tenkey
+[TENKEY] = KEYMAP(
+       // left hand
+       KC_NO,       KC_NO,    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+       KC_NO,       KC_NO,    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+       KC_NO,       KC_NO,    KC_NO, KC_NO, KC_NO, KC_NO,
+       KC_NO,       KC_NO,    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+       KC_NO,       KC_NO,    KC_NO, KC_NO, KC_NO, KC_NO,
+                                                            KC_NO, KC_NO,
+                                                                     KC_NO,
+                                                     KC_SPC, KC_ENT, KC_NO,
+       // right hand
+       KC_PEQL,   KC_PSLS,  KC_PAST, KC_PMNS, KC_PPLS, KC_LBRC, KC_RBRC,
+       KC_NO,       KC_P7,    KC_P8, KC_P9, KC_NO, KC_NO, KC_NO,
+                    KC_P4,    KC_P5, KC_P6, KC_NO, KC_NO, KC_PENT,
+       KC_NO,       KC_P1,    KC_P2, KC_P3, KC_NO, KC_NO, KC_NO,
+                              KC_PCMM, KC_PDOT, KC_NO, KC_NO, TO(MAIN,1),
+       KC_NO, KC_NO,
+       KC_NO,
+       KC_NO, KC_PENT, KC_P0
     ),
 
 /* Keymap 2: Function Layer
