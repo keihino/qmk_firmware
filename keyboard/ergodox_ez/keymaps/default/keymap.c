@@ -6,7 +6,7 @@
 #include "action_layer.h"
 
 #define MAIN 0  // default layer (for Windows)
-#define WINDOWS 1  // default layer (for Windows)
+#define TENKEY 1  // default layer (for tenkey)
 #define FN      2  // functions
 #define MOUSE   3  // mouse mode
 
