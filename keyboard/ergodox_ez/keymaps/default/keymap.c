@@ -68,7 +68,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
  * |        |      |      |      |      |      |      |           |      |  1   |   2  |   3  |      |      |        |
  * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
- *   |      |      |      |      |      |                                       |      |      |      |      | RMain|
+ *   |      |      |      |      |      |                                       |   ,  |   .  |      |      | RMain|
  *   `----------------------------------'                                       `----------------------------------'
  *                                        ,-------------.       ,-------------.
  *                                        |      |      |       |      |      |
@@ -85,7 +85,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        KC_NO,       KC_NO,    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
        KC_NO,       KC_NO,    KC_NO, KC_NO, KC_NO, KC_NO,
        KC_NO,       KC_NO,    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
-       KC_NO,       KC_NO,    KC_NO, KC_NO, KC_NO, KC_NO,
+       KC_NO,       KC_NO,    KC_NO, KC_NO, KC_NO,
                                                             KC_NO, KC_NO,
                                                                      KC_NO,
                                                      KC_SPC, KC_ENT, KC_NO,
